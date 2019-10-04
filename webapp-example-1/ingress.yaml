@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: training-api
+  labels:
+    app: webapp
+spec:
+  rules:
+  - host: web.minikube.local
+    http:
+      paths:
+      - backend:
+          serviceName: webapp-svc
+          servicePort: 8080
